@@ -1,6 +1,6 @@
 require("Master");
 
--- Example of particles, uncomment.
+-- Example of particles, uncomment to see.
 local particleEffect = newParticles();
 particleEffect.pos = newVec2((320*3)/2, (180*3)/2);
 addObject(particleEffect);

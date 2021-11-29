@@ -16,6 +16,12 @@ local function init(self)
 end
 
 local function update(self, dt)
+    -- Making sure to remove it
+    self.lifetime:update(dt);
+    if self.lifetime:isOver() then
+        removeObject(self);
+    end
+
     for i=1,#self._particles do 
         local particle = self._particles[i];
         -- Adding velocity
@@ -65,7 +71,8 @@ function newParticles()
         init=init,
         update=update,
         draw=draw,
-        spawnSize=16
+        spawnSize=16,
+        lifetime=newTimer(1)
     };
 
     return particles;
