@@ -1,12 +1,13 @@
 
 local function init(self)
     for i=1,self.amount do
+        local dir = newVec2((lm.random()*2)-1, (lm.random()*2)-1):normalized();
         t.insert(self._particles, {
             pos=newVec2(
                 lm.random() * self.spawnSize,
                 lm.random() * self.spawnSize
             ):normalized(),
-            dir=newVec2(),
+            dir=dir,
             speed=self.speed,
         });
     end
@@ -44,10 +45,10 @@ function newParticles()
         gravityDir=newVec2(0, 1),
         gravity=15,
         spread=45,
-        speed=5,
+        speed=15,
         damping=0,
         drawMode="circle-fill", -- All values are listed below
-        size=32,
+        size=12,
         init=init,
         update=update,
         draw=draw,

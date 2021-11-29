@@ -1,10 +1,11 @@
 require("Master");
 
 -- Example of particles, uncomment.
--- local particleEffect = newParticles();
--- particleEffect.pos = newVec2((320*3)/2, (180*3)/2);
--- particleEffect.speed = 100;
--- addObject(particleEffect);
+local particleEffect = newParticles();
+particleEffect.pos = newVec2((320*3)/2, (180*3)/2);
+particleEffect.speed = 100;
+particleEffect.gravity = 0;
+addObject(particleEffect);
 
 function love.update(dt)
     if #objects > 0 then
