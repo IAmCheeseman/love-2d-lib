@@ -9,6 +9,8 @@ local function init(self)
             ):normalized(),
             dir=dir,
             speed=self.speed,
+            gravity=newVec2(),
+            gravityLvl=0
         });
     end
 end
@@ -16,22 +18,32 @@ end
 local function update(self, dt)
     for i=1,#self._particles do 
         local particle = self._particles[i];
-        particle.pos.x = particle.pos.x + particle.dir.x + (self.gravityDir.x * self.gravity);
-        particle.pos.y = particle.pos.y + particle.dir.y + (self.gravityDir.y * self.gravity);
-        particle.speed = m.lerp(particle.speed, 0, self.damping);
+        -- Adding velocity
+        particle.pos.x = (particle.pos.x + particle.dir.x * particle.speed * dt) + (particle.gravity.x * dt);
+        particle.pos.y = (particle.pos.y + particle.dir.y * particle.speed * dt) + (particle.gravity.y * dt);
+        -- Gravity
+        particle.gravity.x = self.gravityDir.x * (self.gravity * particle.gravityLvl * dt);
+        particle.gravity.y = self.gravityDir.y * (self.gravity * particle.gravityLvl * dt);
+
+        particle.gravityLvl = particle.gravityLvl + 1;
+        -- Damping
+        particle.speed = m.lerp(particle.speed, 0, self.damping*dt);
     end
 end
 
 local function draw(self)
-    if self.drawMode == "circle-fill" then
-        for i=1,#self._particles do
-            local particle = self._particles[i];
+    for i=1,#self._particles do
+        local particle = self._particles[i];
 
-            local drawPos = newVec2(
-                particle.pos.x + self.pos.x,
-                particle.pos.y + self.pos.y
-            );
-            gfx.vcircle("fill", drawPos, self.size);
+        local drawPos = newVec2(
+            particle.pos.x + self.pos.x,
+            particle.pos.y + self.pos.y
+        );
+        gfx.print("x"..particle.gravity.x..", y"..particle.gravity.y);
+        if self.drawShape == "circle" then
+            gfx.vcircle(self.drawMode, drawPos, self.size);
+        elseif self.drawShape == "rect" then 
+            gfx.vrect(self.drawMode, drawPos, newVec2(self.size*2, self.size*2));
         end
     end
 end
@@ -43,11 +55,12 @@ function newParticles()
         pos=newVec2(),
         dir=newVec2(1, 0),
         gravityDir=newVec2(0, 1),
-        gravity=15,
+        gravity=620,
         spread=45,
-        speed=15,
+        speed=150,
         damping=0,
-        drawMode="circle-fill", -- All values are listed below
+        drawShape="circle", -- "rect" for a rectangle
+        drawMode="fill",
         size=12,
         init=init,
         update=update,
@@ -58,8 +71,3 @@ function newParticles()
     return particles;
 end
 
--- PARITCLE DRAW MODES
--- circle-fill (default)
--- circle-line
--- rect-fill
--- rect-line

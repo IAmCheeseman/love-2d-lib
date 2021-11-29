@@ -20,6 +20,9 @@ function m.lerp(a, b, t) return (b-a)*t+a; end
 function gfx.vcircle(mode, pos, radius)
     gfx.circle(mode, pos.x, pos.y, radius);
 end
+function gfx.vrect(mode, pos, size)
+    gfx.rectangle(mode, pos.x, pos.y, size.x, size.x);
+end
 
 -- Holds every object in the game 
 objects = {};
