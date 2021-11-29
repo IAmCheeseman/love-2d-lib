@@ -3,10 +3,10 @@ require("/Entities/Player");
 
 -- Some variables to shorten code
 gfx = love.graphics;
-lm  =     love.math;
-m   =          math;
-t   =         table;
 kb  = love.keyboard;
+lm = love.math;
+t = table;
+m = math;
 
 -- Some objects
 globals = {};

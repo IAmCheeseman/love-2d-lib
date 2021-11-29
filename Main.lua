@@ -15,6 +15,6 @@ function love.draw()
             objects[i]:draw();
         end
     end
-    gfx.print("("..globals.player.pos.x..", "..globals.player.pos.y..")")
+    
 end
 
