@@ -7,3 +7,4 @@ function love.conf(t)
     t.window.width = 320*windowScaling;
     t.window.height = 180*windowScaling; 
 end
+

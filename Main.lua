@@ -1,12 +1,17 @@
 require("Master");
 
+-- Example of particles, uncomment.
+-- local particleEffect = newParticles();
+-- particleEffect.pos = newVec2((320*3)/2, (180*3)/2);
+-- particleEffect.speed = 100;
+-- addObject(particleEffect);
+
 function love.update(dt)
     if #objects > 0 then
         for i=1,#objects do
             objects[i]:update(dt);
         end
     end
-
 end
 
 function love.draw()
@@ -15,6 +20,5 @@ function love.draw()
             objects[i]:draw();
         end
     end
-    
 end
 

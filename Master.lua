@@ -1,4 +1,6 @@
 require("/Tools/Vector");
+require("/Tools/Particles");
+require("/Tools/Timer");
 require("/Entities/Player");
 
 -- Some variables to shorten code
@@ -29,8 +31,11 @@ groups["Player"] = {};
 
 -- Object functions
 function addObject(object) 
-    if not object.groups then
+    if not object.groups then -- Adding group table if it doesn't have one
         object.groups = {};
+    end
+    if object.init then -- Calling init function if it has one
+        object:init();
     end
     t.insert(objects, object);
 end
