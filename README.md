@@ -2,8 +2,7 @@
 A base for love2D projects, so I don't need to set up the same systems every time I want to make a game.
 
 ## Vectors
-I have a vector class/table with some helpful functions. Call `require("/tools/vector")` to use them.
-`newVector(<x>, <y>)` - returns a vector table 
+I have a vector class/table with some helpful functions. Call `require("/tools/vector")` to get them and then `newVec2(<x>, <y>)` to get one.
 
 `vec:dot()` - returns the dot product
 
