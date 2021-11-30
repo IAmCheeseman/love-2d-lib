@@ -112,7 +112,7 @@ There's a timer table which you can get with `require("tools/timer")` and then c
 
 `timer:timeElapsed()` - returns `time - timeLeft`.
 
-`timer:getPercentageOver()` - returns how much time is left in the form of a percentag (0-1)
+`timer:getPercentageOver()` - returns how much time is left in the form of a percentage (0-1)
 
 ## Colors
 There's a color table which can be used to store rgb values. Call `gfx.newColor(<r>, <g>, <b>)`

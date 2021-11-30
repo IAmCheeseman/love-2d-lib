@@ -40,9 +40,7 @@ local function rotated(self, r)
     return newVec2(m.cos(rot), m.sin(rot)):mult(length);
 end
 local function rotatedDegrees(self, d) 
-    local rot = self:angle()+m.deg2rad(d);
-    local length = self:length();
-    return newVec2(m.cos(rot), m.sin(rot)):mult(length);
+    return self:rotated(m.deg2rad(d));
 end
 local function add(self, vector) return newVec2(self.x+vector.x, self.y+vector.y) end
 local function sub(self, vector) return newVec2(self.x-vector.x, self.y-vector.y) end
