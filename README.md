@@ -20,7 +20,7 @@ I have a vector class/table with some helpful functions. Call `require("/tools/v
 There's a timer table which you can get with `require("/tools/timer")` and then calling `newTimer(<time>)`.
 `timer:isOver()` - returns whether the timer is over or not
 
-`tiemr:reset()` - resets the timer
+`timer:reset()` - resets the timer
 
 `timer:resetIfOver()` - resets the timer, but only if it's over
 
