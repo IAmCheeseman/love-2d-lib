@@ -51,6 +51,8 @@ I have a vector class/table with some helpful functions. Call `require("tools/ve
 
 `vec:normalized()` - returns a normalized version
 
+`vec:normalised()` - same as `vec:normalized`, just bri'ish
+
 `vec:directionTo(<vector>)` - returns the direction (normalized) to another vector
 
 `vec:distanceTo(<vector>)` - return the distance to another vector

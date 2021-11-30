@@ -47,6 +47,7 @@ function newVec2(x, y)
         x=x, y=y,
         length=length,
         normalized=normalized,
+        normalised=normalized,
         directionTo=directionTo,
         distanceTo=distanceTo,
         angleTo=angleTo,
