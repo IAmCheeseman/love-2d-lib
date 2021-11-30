@@ -14,6 +14,10 @@ A base for love2D projects, so I don't need to set up the same systems every tim
 
 □ Full vector tables
 
+□ Collision
+
+□ Raycasts
+
 ## Shortened Names
 I have shortened names for commonly used things
 
@@ -29,7 +33,7 @@ I have shortened names for commonly used things
 
 ## Math
 
-All extra math functions are added to luas default `math` library, which I have a shortcut for: `m`, and loves math library: `lm`
+All extra math functions are added to luas default `math` library.
 
 `lerp(<from>, <to>, <weight>)` - lerps from `from` to `to`, `weight` controls how far along to move it
 
@@ -106,7 +110,8 @@ There's a timer table which you can get with `require("tools/timer")` and then c
 
 ## Colors
 There's a color table which can be used to store rgb values. Call `gfx.newColor(<r>, <g>, <b>)`
-to create a new color. Below you'll see `gfx` used, which is just `love.graphics`.
+to create a new color. Below you'll see `gfx` used, which is just `love.graphics`. You may also
+use colour instead of color.
 
 **Color Functions**
 
