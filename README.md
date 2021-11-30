@@ -20,6 +20,7 @@ I have a vector class/table with some helpful functions. Call `require("/tools/v
 **Vector Properties**
 
 `x` - horizontal axis
+
 `y` - vertical axis
 
 **Vector Functions**
