@@ -14,6 +14,17 @@ A base for love2D projects, so I don't need to set up the same systems every tim
 
 □ Full vector tables
 
+## Math
+
+All extra math functions are added to luas default `math` library, which I have a shortcut for: `m`, and loves math library: `lm`
+
+`lerp(<from>, <to>, <weight>)` - lerps from `from` to `to`, `weight` controls how far along to move it
+
+`deg2rad(<radian>)` - converts radians to degrees
+
+`rad2deg(<degree>)` - converts degrees to radians
+
+
 ## Vectors
 I have a vector class/table with some helpful functions. Call `require("/tools/vector")` to get them and then `newVec2(<x>, <y>)` to get one.
 
