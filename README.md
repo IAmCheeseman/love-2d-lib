@@ -29,7 +29,7 @@ I have shortened names for commonly used things
 
 ## Math
 
-All extra math functions are added to luas default `math` library, which I have a shortcut for: `m`, and loves math library: `lm`
+All extra math functions are added to luas default `math` library.
 
 `lerp(<from>, <to>, <weight>)` - lerps from `from` to `to`, `weight` controls how far along to move it
 
