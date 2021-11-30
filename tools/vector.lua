@@ -34,6 +34,10 @@ local function moveTo(self, vector, t)
         m.lerp(self.y, vector.y, t)
     );
 end
+local function       mult(self, n) return newVec2(self.x*       n, self.y*       n); end
+local function vmutl(self, vector) return newVec2(self.x*vector.x, self.y*vector.y); end
+local function        div(self, n) return newVec2(self.x/       n, self.y/       n); end
+local function  vdiv(self, vector) return newVec2(self.x/vector.x, self.y/vector.y); end
 
 function newVec2(x, y)
     x = x or 0;
@@ -46,7 +50,11 @@ function newVec2(x, y)
         distanceTo=distanceTo,
         angleTo=angleTo,
         angle=angle,
-        moveTo=moveTo
+        moveTo=moveTo,
+        mult=mult,
+        vmult=vmult,
+        div=div,
+        vdiv=vdiv
     };
 
     return newVec;

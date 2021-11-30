@@ -39,6 +39,16 @@ I have a vector class/table with some helpful functions. Call `require("/tools/v
 
 `vec:angle()` - returns the angle of the vector
 
+`vec:moveTo(<vector>, <t>)` - returns `vec` lerped to `vector`
+
+`vec:mult(<n>)` - returns a new vector multiplied by `n`
+
+`vec:vmult(<vector>)` - returns a new vector mutliplied by another vector
+
+`vec:div(<n>)` - returns a new vector divided by `n`
+
+`vec:vdiv(<vector>)` - returns a new vector divided by another vector
+
 ## Timers
 There's a timer table which you can get with `require("/tools/timer")` and then calling `newTimer(<time>)`.
 

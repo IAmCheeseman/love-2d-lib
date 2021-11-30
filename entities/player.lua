@@ -13,8 +13,7 @@ local function move(self, dt)
 
     -- Normalizing the input vector
     targetV = targetV:normalized();
-    targetV.x = targetV.x * self.speed;
-    targetV.y = targetV.y * self.speed;
+    targetV = targetV:mult(self.speed);
 
     -- Applying the lerp
     self.vel = self.vel:moveTo(targetV, lerpVal * dt);
