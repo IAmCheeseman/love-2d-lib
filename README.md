@@ -25,7 +25,9 @@ There's a timer table which you can get with `require("/tools/timer")` and then 
 
 `timer:resetIfOver()` - resets the timer, but only if it's over
 
-It has three properties:
+
+Timers have three properties:
+
 `time` - the time it counts down from
 
 `timeLeft` - the time left in the current countdown
