@@ -13,6 +13,9 @@ end
 local function timeElapsed(self)
     return self.time - self.timeLeft;
 end
+local function percentageOver(self)
+    return 1-(self:timeElapsed()/self.time);
+end 
 local function update(self, dt) 
     self.timeLeft = self.timeLeft - dt;
 end
@@ -31,6 +34,7 @@ function newTimer(time)
         reset=reset,
         resetIfOver=resetIfOver,
         timeElapsed=timeElapsed,
+        percentageOver=percentageOver,
         update=update,
         draw=draw
     };

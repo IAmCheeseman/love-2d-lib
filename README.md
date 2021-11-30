@@ -12,7 +12,7 @@ A base for love2D projects, so I don't need to set up the same systems every tim
 
 □ Animations
 
-□ Full vector tables
+√ Full vector tables
 
 □ Collision
 

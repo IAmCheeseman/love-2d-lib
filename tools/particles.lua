@@ -46,7 +46,7 @@ local function draw(self)
         );
         gfx.print("x"..particle.gravity.x..", y"..particle.gravity.y);
         if self.drawShape == "circle" then
-            gfx.vcircle(self.drawMode, drawPos, self.size);
+            gfx.vcircle(self.drawMode, drawPos, self.size*self.lifetime:percentageOver());
         elseif self.drawShape == "rect" then 
             gfx.vrect(self.drawMode, drawPos, newVec2(self.size*2, self.size*2));
         end
@@ -64,6 +64,7 @@ function newParticles()
         spread=45,
         speed=150,
         damping=0,
+        scaleLerp=1,
         drawShape="circle", -- "rect" for a rectangle
         drawMode="fill",
         size=12,

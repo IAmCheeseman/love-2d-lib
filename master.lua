@@ -11,6 +11,7 @@ require("tools/math");
 require("tools/draw");
 require("tools/vector");
 require("tools/particles");
+require("tools/lights/lights");
 require("tools/timer");
 require("entities/player");
 

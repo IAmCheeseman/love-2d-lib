@@ -45,6 +45,7 @@ local function rotatedDegrees(self, d)
     return newVec2(m.cos(rot), m.sin(rot)):mult(length);
 end
 local function add(self, vector) return newVec2(self.x+vector.x, self.y+vector.y) end
+local function sub(self, vector) return newVec2(self.x-vector.x, self.y-vector.y) end
 local function mult(self, n) return newVec2(self.x*n, self.y*n) end
 local function vmutl(self, vector) return newVec2(self.x*vector.x, self.y*vector.y) end
 local function div(self, n) return newVec2(self.x/n, self.y/n) end
@@ -66,6 +67,7 @@ function newVec2(x, y)
         rotated=rotated,
         rotatedDegrees=rotatedDegrees,
         add=add,
+        sub=sub,
         mult=mult,
         vmult=vmult,
         div=div,
