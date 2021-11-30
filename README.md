@@ -4,8 +4,6 @@ A base for love2D projects, so I don't need to set up the same systems every tim
 ### Goals
 √ Vector base
 
-√ Groups
-
 √ Timers
 
 □ Particles
