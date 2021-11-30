@@ -25,7 +25,7 @@ I have a vector class/table with some helpful functions. Call `require("/tools/v
 
 **Vector Functions**
 
-`vec:dot()` - returns the dot product
+`vec:dot(<vector>)` - returns the dot product with another vector
 
 `vec:length()` - returns the length
 
