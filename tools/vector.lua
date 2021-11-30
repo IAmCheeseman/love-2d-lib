@@ -3,7 +3,7 @@ local function dot(self, vector)
     return (self.x*self.x + self.y*self.y) + (vector.x*vector.x + vector.y*vector.y);
 end
 local function length(self)
-    return math.sqrt(self.x*self.x + self.y*self.y;);
+    return math.sqrt(self.x*self.x + self.y*self.y);
 end
 local function normalized(self)
     local length = self:length();
@@ -23,7 +23,10 @@ local function angleTo(self, vector)
     local dot = self:dot(vector);
     local v1Len = self:length();
     local v2Len = vector:length();
-    return (dot/v1Len)/v2Leng;
+    return (dot/v1Len)/v2Len;
+end
+local function angle(self)
+    return m.atan2(self.y, self.x);
 end
 
 function newVec2(x, y)
@@ -35,7 +38,8 @@ function newVec2(x, y)
         normalized=normalized,
         directionTo=directionTo,
         distanceTo=distanceTo,
-        angleTo=angleTo
+        angleTo=angleTo,
+        angle=angle
     };
 
     return newVec;

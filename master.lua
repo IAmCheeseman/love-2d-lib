@@ -15,6 +15,8 @@ globals = {};
 
 -- Extra math functions
 function m.lerp(a, b, t) return (b-a)*t+a; end
+function m.rad2deg(r) return r*180 /m.pi end
+function m.deg2raf(d) return d*m.pi/ 180 end
 
 -- Extra draw functions
 function gfx.vcircle(mode, pos, radius)
