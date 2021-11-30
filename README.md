@@ -17,6 +17,13 @@ A base for love2D projects, so I don't need to set up the same systems every tim
 ## Vectors
 I have a vector class/table with some helpful functions. Call `require("/tools/vector")` to get them and then `newVec2(<x>, <y>)` to get one.
 
+**Vector Properties**
+
+`x` - horizontal axis
+`y` - vertical axis
+
+**Vector Functions**
+
 `vec:dot()` - returns the dot product
 
 `vec:length()` - returns the length
@@ -33,20 +40,22 @@ I have a vector class/table with some helpful functions. Call `require("/tools/v
 
 ## Timers
 There's a timer table which you can get with `require("/tools/timer")` and then calling `newTimer(<time>)`.
-`timer:isOver()` - returns whether the timer is over or not
 
-`timer:reset()` - resets the timer
-
-`timer:resetIfOver()` - resets the timer, but only if it's over
-
-
-Timers have three properties:
+**Timer Properties**
 
 `time` - the time it counts down from
 
 `timeLeft` - the time left in the current countdown
 
 `printTime` - if true, prints out `timeLeft`
+
+**Timer Functions**
+
+`timer:isOver()` - returns whether the timer is over or not
+
+`timer:reset()` - resets the timer
+
+`timer:resetIfOver()` - resets the timer, but only if it's over
 
 ## Particles
 WIP
