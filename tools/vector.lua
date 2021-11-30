@@ -26,7 +26,7 @@ local function angleTo(self, vector)
     return (dot/v1Len)/v2Leng;
 end
 
-function newVec2(x, y) 
+function newVec2(x, y)
     x = x or 0;
     y = y or 0;
     local newVec = {
