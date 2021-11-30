@@ -1,10 +1,31 @@
 # Love2DBase
-A base for love2D projects, so I don't need to set up the same systems every time I want to make a game.
+A base for love2D projects, so I don't need to set up the same systems every time I want to make a game. You can use this in your own projects, no credit needed. But this is purely a personal thing, so I won't be adding features unless I find a use for them, unless you add them yourself (Make a PR!). There may also be broken stuff and uncomplete stuff.
+
+### Goals
+√ Vector base
+
+√ Groups
+
+√ Timers
+
+□ Particles
+
+□ Animations
+
+□ Full vector tables
 
 ## Vectors
 I have a vector class/table with some helpful functions. Call `require("/tools/vector")` to get them and then `newVec2(<x>, <y>)` to get one.
 
-`vec:dot()` - returns the dot product
+**Vector Properties**
+
+`x` - horizontal axis
+
+`y` - vertical axis
+
+**Vector Functions**
+
+`vec:dot(<vector>)` - returns the dot product with another vector
 
 `vec:length()` - returns the length
 
@@ -20,20 +41,24 @@ I have a vector class/table with some helpful functions. Call `require("/tools/v
 
 ## Timers
 There's a timer table which you can get with `require("/tools/timer")` and then calling `newTimer(<time>)`.
-`timer:isOver()` - returns whether the timer is over or not
 
-`timer:reset()` - resets the timer
-
-`timer:resetIfOver()` - resets the timer, but only if it's over
-
-
-Timers have three properties:
+**Timer Properties**
 
 `time` - the time it counts down from
 
 `timeLeft` - the time left in the current countdown
 
 `printTime` - if true, prints out `timeLeft`
+
+**Timer Functions**
+
+`timer:isOver()` - returns whether the timer is over or not
+
+`timer:reset()` - resets the timer
+
+`timer:resetIfOver()` - resets the timer, but only if it's over
+
+`timer:timeElapsed()` - returns `time - timeLeft`.
 
 ## Particles
 WIP
