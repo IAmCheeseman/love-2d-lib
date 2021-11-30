@@ -14,6 +14,10 @@ A base for love2D projects, so I don't need to set up the same systems every tim
 
 □ Full vector tables
 
+□ Collision
+
+□ Raycasts
+
 ## Shortened Names
 I have shortened names for commonly used things
 
