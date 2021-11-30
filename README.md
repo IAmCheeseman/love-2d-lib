@@ -14,6 +14,8 @@ I have a vector class/table with some helpful functions. Call `require("/tools/v
 
 `vec:distanceTo(<vector>)` - return the distance to another vector
 
+`vec:angleTo(<vector>)` - returns the angle between two vectors
+
 `vec:angle()` - returns the angle of the vector
 
 ## Timers
