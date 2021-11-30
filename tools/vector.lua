@@ -28,6 +28,12 @@ end
 local function angle(self)
     return m.atan2(self.y, self.x);
 end
+local function moveTo(self, vector, t)
+    return newVec2(
+        m.lerp(self.x, vector.x, t),
+        m.lerp(self.y, vector.y, t)
+    );
+end
 
 function newVec2(x, y)
     x = x or 0;
@@ -39,7 +45,8 @@ function newVec2(x, y)
         directionTo=directionTo,
         distanceTo=distanceTo,
         angleTo=angleTo,
-        angle=angle
+        angle=angle,
+        moveTo=moveTo
     };
 
     return newVec;
