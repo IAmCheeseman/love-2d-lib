@@ -1,7 +1,7 @@
 
 local function init(self)
     for i=1,self.amount do
-        local dir = newVec2((lm.random()*2)-1, (lm.random()*2)-1):normalized();
+        local dir = self.dir:normalized():rotatedDegrees( (lm.random()*(self.spread*2))-self.spread );
         t.insert(self._particles, {
             pos=newVec2(
                 lm.random() * self.spawnSize,
@@ -16,7 +16,7 @@ local function init(self)
 end
 
 local function update(self, dt)
-    -- Making sure to remove it
+    -- Making sure to remove it if need be
     self.lifetime:update(dt);
     if self.lifetime:isOver() then
         removeObject(self);

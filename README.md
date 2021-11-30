@@ -69,6 +69,10 @@ I have a vector class/table with some helpful functions. Call `require("tools/ve
 
 `vec:angle()` - returns the angle of the vector
 
+`vec:rotated(<r>)` - returns the vector rotatated by `r` radians
+
+`vec:rotatedDegrees(<d>)` - returns the vector rotatated by `d` degrees
+
 `vec:moveTo(<vector>, <t>)` - returns `vec` lerped to `vector`
 
 `vec:add(<vector>)` - returns a new vector with `vector` added to it

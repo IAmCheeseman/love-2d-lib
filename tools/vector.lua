@@ -34,6 +34,16 @@ local function moveTo(self, vector, t)
         m.lerp(self.y, vector.y, t)
     );
 end
+local function rotated(self, r) 
+    local rot = self:angle()+r;
+    local length = self:length();
+    return newVec2(m.cos(rot), m.sin(rot)):mult(length);
+end
+local function rotatedDegrees(self, d) 
+    local rot = self:angle()+m.deg2rad(d);
+    local length = self:length();
+    return newVec2(m.cos(rot), m.sin(rot)):mult(length);
+end
 local function add(self, vector) return newVec2(self.x+vector.x, self.y+vector.y) end
 local function mult(self, n) return newVec2(self.x*n, self.y*n) end
 local function vmutl(self, vector) return newVec2(self.x*vector.x, self.y*vector.y) end
@@ -47,12 +57,14 @@ function newVec2(x, y)
         x=x, y=y,
         length=length,
         normalized=normalized,
-        normalised=normalized,
+        normalised=normalized, -- :puking:
         directionTo=directionTo,
         distanceTo=distanceTo,
         angleTo=angleTo,
         angle=angle,
         moveTo=moveTo,
+        rotated=rotated,
+        rotatedDegrees=rotatedDegrees,
         add=add,
         mult=mult,
         vmult=vmult,
