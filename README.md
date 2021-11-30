@@ -58,5 +58,7 @@ There's a timer table which you can get with `require("/tools/timer")` and then 
 
 `timer:resetIfOver()` - resets the timer, but only if it's over
 
+`timer:timeElapsed()` - returns `time - timeLeft`.
+
 ## Particles
 WIP
