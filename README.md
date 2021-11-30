@@ -18,9 +18,13 @@ A base for love2D projects, so I don't need to set up the same systems every tim
 I have shortened names for commonly used things
 
 `t` - `table`
+
 `m` - `math`
+
 `lm` - `love.math`
+
 `kb` - `love.keyboard`
+
 `gfx` - `love.graphics`
 
 ## Math
@@ -102,8 +106,7 @@ There's a timer table which you can get with `require("tools/timer")` and then c
 
 ## Colors
 There's a color table which can be used to store rgb values. Call `gfx.newColor(<r>, <g>, <b>)`
-to create a new color. Below you'll see `gfx` used, which is just `love.graphics`. You can also
-use 'Colour' instead of 'Color'.
+to create a new color. Below you'll see `gfx` used, which is just `love.graphics`.
 
 **Color Functions**
 
