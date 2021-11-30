@@ -6,18 +6,16 @@ particleEffect.pos = newVec2((320*3)/2, (180*3)/2);
 addObject(particleEffect);
 
 function love.update(dt)
-    if #objects > 0 then
-        for i=1,#objects do
-            objects[i]:update(dt);
-        end
+    for i, object in ipairs(objects) do
+        object:update(dt);
     end
+
 end
 
 function love.draw()
-    if #objects > 0 then
-        for i=1,#objects do
-            objects[i]:draw();
-        end
+    for i, object in ipairs(objects) do
+        object:draw();
     end
+
 end
 

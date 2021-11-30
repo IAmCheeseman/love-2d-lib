@@ -22,7 +22,7 @@ local function update(self, dt)
         removeObject(self);
     end
 
-    for i=1,#self._particles do 
+    for i, particle in ipairs(self._particles) do 
         local particle = self._particles[i];
         -- Adding velocity
         particle.pos.x = (particle.pos.x + particle.dir.x * particle.speed * dt) + (particle.gravity.x * dt);
@@ -38,8 +38,7 @@ local function update(self, dt)
 end
 
 local function draw(self)
-    for i=1,#self._particles do
-        local particle = self._particles[i];
+    for i, particle in ipairs(self._particles) do
 
         local drawPos = newVec2(
             particle.pos.x + self.pos.x,
