@@ -10,6 +10,9 @@ local function resetIfOver(self)
         self:reset();
     end
 end
+local function timeElapsed(self)
+    return self.time - self.timeLeft;
+end
 local function update(self, dt) 
     self.timeLeft = self.timeLeft - dt;
 end
@@ -27,6 +30,7 @@ function newTimer(time)
         isOver=isOver,
         reset=reset,
         resetIfOver=resetIfOver,
+        timeElapsed=timeElapsed,
         update=update,
         draw=draw
     };
