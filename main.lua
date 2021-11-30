@@ -1,4 +1,4 @@
-require("Master");
+require("master");
 
 -- Example of particles, uncomment to see.
 local particleEffect = newParticles();

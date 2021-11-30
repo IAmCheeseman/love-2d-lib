@@ -1,7 +1,7 @@
-require("/Tools/Vector");
-require("/Tools/Particles");
-require("/Tools/Timer");
-require("/Entities/Player");
+require("/tools/vector");
+require("/tools/particles");
+require("/tools/timer");
+require("/entities/player");
 
 -- Some variables to shorten code
 gfx = love.graphics;
