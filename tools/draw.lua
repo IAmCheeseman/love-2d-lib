@@ -27,3 +27,8 @@ end
 function love.graphics.vrect(mode, pos, size)
     love.graphics.rectangle(mode, pos.x, pos.y, size.x, size.x);
 end
+
+-- Bri'ish translations
+love.graphics.newColour = love.graphics.newColor;
+love.graphics.csetColour = love.graphics.csetColor;
+love.graphics.csetBackgroundColour = love.graphics.csetBackgroundColor;

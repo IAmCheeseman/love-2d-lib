@@ -102,7 +102,8 @@ There's a timer table which you can get with `require("tools/timer")` and then c
 
 ## Colors
 There's a color table which can be used to store rgb values. Call `gfx.newColor(<r>, <g>, <b>)`
-to create a new color. Below you'll see `gfx` used, which is just `love.graphics`.
+to create a new color. Below you'll see `gfx` used, which is just `love.graphics`. You can also
+use 'Colour' instead of 'Color'.
 
 **Color Functions**
 
