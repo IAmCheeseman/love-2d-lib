@@ -12,7 +12,7 @@ function love.graphics.newColor(r, g, b)
     return {r=r, g=g, b=b};
 end
 
--- Functions to use colors instead of rgb values
+-- Functions to use colors instead of straight rgb values
 function love.graphics.csetColor(color)
     love.graphics.setColor(color.r, color.g, color.b);
 end

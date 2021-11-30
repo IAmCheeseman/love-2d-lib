@@ -15,7 +15,7 @@ A base for love2D projects, so I don't need to set up the same systems every tim
 □ Full vector tables
 
 ## Shortened Names
-I have shortened names for commonly used thingies
+I have shortened names for commonly used things
 
 `t` - `table`
 `m` - `math`
@@ -71,6 +71,12 @@ I have a vector class/table with some helpful functions. Call `require("tools/ve
 
 `vec:vdiv(<vector>)` - returns a new vector divided by another vector
 
+**Related Functions**
+
+`gfx.vcircle(<mode>, <pos>, <radius>)` - Draws a circle with a vector
+
+`gfx.vrect()`
+
 ## Timers
 There's a timer table which you can get with `require("tools/timer")` and then calling `newTimer(<time>)`.
 
@@ -101,4 +107,4 @@ to create a new color. Below you'll see `gfx` used, which is just `love.graphics
 `gfx.csetColor(<color>)` - version of `setColor()` which uses my color system
 
 ## Particles
-WIP
+WIP - Gonna be very long
