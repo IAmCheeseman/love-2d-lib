@@ -31,8 +31,9 @@ end
 
 -- Player draw
 local function draw(self)
-    gfx.csetColor(colors.TEAL);
+    gfx.csetColor(gfx.newColor(1, 1, 0));
     gfx.vcircle("fill", self.pos, 32); 
+    gfx.csetColor(colors.WHITE);
 end
 
 
