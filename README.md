@@ -41,6 +41,8 @@ I have a vector class/table with some helpful functions. Call `require("/tools/v
 
 `vec:moveTo(<vector>, <t>)` - returns `vec` lerped to `vector`
 
+`vec:add(<vector>)` - returns a new vector with `vector` added to it
+
 `vec:mult(<n>)` - returns a new vector multiplied by `n`
 
 `vec:vmult(<vector>)` - returns a new vector mutliplied by another vector

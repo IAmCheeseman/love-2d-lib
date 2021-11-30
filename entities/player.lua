@@ -19,8 +19,7 @@ local function move(self, dt)
     self.vel = self.vel:moveTo(targetV, lerpVal * dt);
 
     -- Applying the velocity
-    self.pos.y = self.pos.y + self.vel.y * dt;
-    self.pos.x = self.pos.x + self.vel.x * dt;
+    self.pos = self.pos:add(self.vel:mult(dt));
 end
 
 -- Player update
