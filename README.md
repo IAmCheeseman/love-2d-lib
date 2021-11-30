@@ -6,11 +6,22 @@ A base for love2D projects, so I don't need to set up the same systems every tim
 
 √ Timers
 
+√ Color table
+
 □ Particles
 
 □ Animations
 
 □ Full vector tables
+
+## Shortened Names
+I have shortened names for commonly used thingies
+
+`t` - `table`
+`m` - `math`
+`lm` - `love.math`
+`kb` - `love.keyboard`
+`gfx` - `love.graphics`
 
 ## Math
 
@@ -24,7 +35,7 @@ All extra math functions are added to luas default `math` library, which I have 
 
 
 ## Vectors
-I have a vector class/table with some helpful functions. Call `require("/tools/vector")` to get them and then `newVec2(<x>, <y>)` to get one.
+I have a vector class/table with some helpful functions. Call `require("tools/vector")` to get them and then `newVec2(<x>, <y>)` to get one.
 
 **Vector Properties**
 
@@ -61,7 +72,7 @@ I have a vector class/table with some helpful functions. Call `require("/tools/v
 `vec:vdiv(<vector>)` - returns a new vector divided by another vector
 
 ## Timers
-There's a timer table which you can get with `require("/tools/timer")` and then calling `newTimer(<time>)`.
+There's a timer table which you can get with `require("tools/timer")` and then calling `newTimer(<time>)`.
 
 **Timer Properties**
 
@@ -80,6 +91,14 @@ There's a timer table which you can get with `require("/tools/timer")` and then 
 `timer:resetIfOver()` - resets the timer, but only if it's over
 
 `timer:timeElapsed()` - returns `time - timeLeft`.
+
+## Colors
+There's a color table which can be used to store rgb values. Call `gfx.newColor(<r>, <g>, <b>)`
+to create a new color. Below you'll see `gfx` used, which is just `love.graphics`.
+
+**Color Functions**
+
+`gfx.csetColor(<color>)` - version of `setColor()` which uses my color system
 
 ## Particles
 WIP

@@ -1,4 +1,6 @@
 
+-- player.lua is a script containing basic movement code,
+-- with acceleration/friction applied
 
 local function move(self, dt) 
     local targetV = newVec2();
@@ -29,11 +31,12 @@ end
 
 -- Player draw
 local function draw(self)
+    gfx.csetColor(colors.TEAL);
     gfx.vcircle("fill", self.pos, 32); 
 end
 
 
-function newPlayer()
+function newPlayer() -- Creates a new player object
     return {
         pos = newVec2(50, 50),
         vel = newVec2(),
