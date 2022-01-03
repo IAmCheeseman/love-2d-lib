@@ -7,6 +7,7 @@ particleEffect.spread = 360
 particleEffect.speedRandom = .75
 particleEffect.scaleRandom = 1
 particleEffect.amount = 100
+particleEffect.color = colors.GREEN
 addObject(particleEffect);
 
 -- Example of lighting, uncomment to see.

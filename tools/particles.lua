@@ -39,6 +39,7 @@ local function update(self, dt)
 end
 
 local function draw(self)
+    gfx.setColor(self.color);
     for i, particle in ipairs(self._particles) do
 
         local drawPos = newVec2(
@@ -47,11 +48,12 @@ local function draw(self)
         );
         gfx.print("x"..particle.gravity.x..", y"..particle.gravity.y);
         if self.drawShape == "circle" then
-            gfx.vcircle(self.drawMode, drawPos, self.size*self.lifetime:percentageOver()*particle.scaleRandom);
+            gfx.circle(self.drawMode, drawPos, self.size*self.lifetime:percentageOver()*particle.scaleRandom);
         elseif self.drawShape == "rect" then 
-            gfx.vrect(self.drawMode, drawPos, newVec2(self.size*2, self.size*2));
+            gfx.rectangle(self.drawMode, drawPos, newVec2(self.size*2, self.size*2));
         end
     end
+    gfx.setColor(colors.WHITE);
 end
 
 function newParticles()
@@ -65,17 +67,18 @@ function newParticles()
         spread=45,
         speed=150,
         speedRandom=0,
-        scaleRandom=0,
         damping=0,
         scaleLerp=1,
         drawShape="circle", -- "rect" for a rectangle
         drawMode="fill",
         size=12,
+        scaleRandom=0,
         init=init,
         update=update,
         draw=draw,
         spawnSize=16,
-        lifetime=newTimer(1)
+        lifetime=newTimer(1),
+        color=gfx.newColor(1, 1, 1)
     };
 
     return particles;
