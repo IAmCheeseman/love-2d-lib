@@ -40,6 +40,7 @@ function removeObject(object)
     for i=1,#objects do
         if objects[i] == object then
             table.remove(objects, i);
+            return;
         end
     end
 end
