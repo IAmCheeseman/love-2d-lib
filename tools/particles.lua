@@ -10,6 +10,7 @@ local function init(self)
             dir=dir,
             speed=self.speed * (1 - (lm.random() * self.speedRandom)),
             gravity=newVec2(),
+            scaleRandom=1 - (lm.random() * self.scaleRandom),
             gravityLvl=0
         });
     end
@@ -46,7 +47,7 @@ local function draw(self)
         );
         gfx.print("x"..particle.gravity.x..", y"..particle.gravity.y);
         if self.drawShape == "circle" then
-            gfx.vcircle(self.drawMode, drawPos, self.size*self.lifetime:percentageOver());
+            gfx.vcircle(self.drawMode, drawPos, self.size*self.lifetime:percentageOver()*particle.scaleRandom);
         elseif self.drawShape == "rect" then 
             gfx.vrect(self.drawMode, drawPos, newVec2(self.size*2, self.size*2));
         end
@@ -64,6 +65,7 @@ function newParticles()
         spread=45,
         speed=150,
         speedRandom=0,
+        scaleRandom=0,
         damping=0,
         scaleLerp=1,
         drawShape="circle", -- "rect" for a rectangle

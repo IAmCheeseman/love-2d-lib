@@ -3,9 +3,9 @@ require("master");
 -- Example of particles, uncomment to see.
 local particleEffect = newParticles();
 particleEffect.pos = newVec2((320*3)/2, (180*3)/2);
-particleEffect.dir = newVec2(-1, 0)
 particleEffect.spread = 360
 particleEffect.speedRandom = .75
+particleEffect.scaleRandom = 1
 particleEffect.amount = 100
 addObject(particleEffect);
 
@@ -13,8 +13,9 @@ addObject(particleEffect);
 -- local newLight = newLight(newVec2(50, 50), newVec2(50, 50));
 -- addObject(newLight);
 
-local newLabel = newLabel("Hello, World", newVec2(50, 50), newVec2(5, 5));
-addObject(newLabel);
+-- UI Labels
+-- local newLabel = newLabel("Hello, World", newVec2(50, 50), newVec2(5, 5));
+-- addObject(newLabel);
 
 function love.update(dt)
     for i, object in ipairs(objects) do
