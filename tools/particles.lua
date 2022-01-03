@@ -1,7 +1,7 @@
 
 local function init(self)
     for i=1,self.amount do
-        local dir = self.dir:normalized():rotatedDegrees(lm.random(-self.spread, self.spread));--(lm.random()*(self.spread*2))-self.spread );
+        local dir = self.dir:normalized():rotatedDegrees(lm.random(-self.spread, self.spread))--(lm.random()*(self.spread*2))-self.spread )
         t.insert(self._particles, {
             pos=newVec2(
                 lm.random() * self.spawnSize,
@@ -12,48 +12,48 @@ local function init(self)
             gravity=newVec2(),
             scaleRandom=1 - (lm.random() * self.scaleRandom),
             gravityLvl=0
-        });
+        })
     end
 end
 
 local function update(self, dt)
     -- Making sure to remove it if need be
-    self.lifetime:update(dt);
+    self.lifetime:update(dt)
     if self.lifetime:isOver() then
-        removeObject(self);
+        removeObject(self)
     end
 
     for i, particle in ipairs(self._particles) do 
-        local particle = self._particles[i];
+        local particle = self._particles[i]
         -- Adding velocity
-        particle.pos.x = (particle.pos.x + particle.dir.x * particle.speed * dt) + (particle.gravity.x * dt);
-        particle.pos.y = (particle.pos.y + particle.dir.y * particle.speed * dt) + (particle.gravity.y * dt);
+        particle.pos.x = (particle.pos.x + particle.dir.x * particle.speed * dt) + (particle.gravity.x * dt)
+        particle.pos.y = (particle.pos.y + particle.dir.y * particle.speed * dt) + (particle.gravity.y * dt)
         -- Gravity
-        particle.gravity.x = self.gravityDir.x * (self.gravity * particle.gravityLvl * dt);
-        particle.gravity.y = self.gravityDir.y * (self.gravity * particle.gravityLvl * dt);
+        particle.gravity.x = self.gravityDir.x * (self.gravity * particle.gravityLvl * dt)
+        particle.gravity.y = self.gravityDir.y * (self.gravity * particle.gravityLvl * dt)
 
-        particle.gravityLvl = particle.gravityLvl + 1;
+        particle.gravityLvl = particle.gravityLvl + 1
         -- Damping
-        particle.speed = m.lerp(particle.speed, 0, self.damping*dt);
+        particle.speed = m.lerp(particle.speed, 0, self.damping*dt)
     end
 end
 
 local function draw(self)
-    gfx.setColor(self.color);
+    gfx.setColor(self.color)
     for i, particle in ipairs(self._particles) do
 
         local drawPos = newVec2(
             particle.pos.x + self.pos.x,
             particle.pos.y + self.pos.y
-        );
-        gfx.print("x"..particle.gravity.x..", y"..particle.gravity.y);
+        )
+        gfx.print("x"..particle.gravity.x..", y"..particle.gravity.y)
         if self.drawShape == "circle" then
-            gfx.circle(self.drawMode, drawPos, self.size*self.lifetime:percentageOver()*particle.scaleRandom);
+            gfx.circle(self.drawMode, drawPos, self.size*self.lifetime:percentageOver()*particle.scaleRandom)
         elseif self.drawShape == "rect" then 
-            gfx.rectangle(self.drawMode, drawPos, newVec2(self.size*2, self.size*2));
+            gfx.rectangle(self.drawMode, drawPos, newVec2(self.size*2, self.size*2))
         end
     end
-    gfx.setColor(colors.WHITE);
+    gfx.setColor(colors.WHITE)
 end
 
 function newParticles()
@@ -79,8 +79,8 @@ function newParticles()
         spawnSize=16,
         lifetime=newTimer(1),
         color=gfx.newColor(1, 1, 1)
-    };
+    }
 
-    return particles;
+    return particles
 end
 
