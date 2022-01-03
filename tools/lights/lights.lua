@@ -1,16 +1,16 @@
-local lights = love.graphics.newShader("tools/lights/lights.fs");
+local lights = love.graphics.newShader("tools/lights/lights.fs")
 
 local function update(self, dt)
-    -- removeObject(self);
+    -- removeObject(self)
 end
 local function draw(self)
-    gfx.setShader(lights);
-    -- lights:send("sizeX", self.size.x);
-    -- lights:send("sizeY", self.size.y);
-    gfx.csetColor(colors.RED);
-    gfx.vrect("fill", self.pos:sub(self.size:mult(.5)), self.size);
-    gfx.csetColor(colors.WHITE);
-    gfx.setShader();
+    gfx.setShader(lights)
+    -- lights:send("sizeX", self.size.x)
+    -- lights:send("sizeY", self.size.y)
+    gfx.csetColor(colors.RED)
+    gfx.vrect("fill", self.pos:sub(self.size:mult(.5)), self.size)
+    gfx.csetColor(colors.WHITE)
+    gfx.setShader()
 end
 
 function newLight(pos, size)
@@ -19,5 +19,5 @@ function newLight(pos, size)
         size=size,
         update=update,
         draw=draw
-    };
+    }
 end
