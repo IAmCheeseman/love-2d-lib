@@ -7,12 +7,18 @@
 -- it has one. (This is the only check currently though more could be
 -- added in the future.)
 
+-- Useful tools
 require("tools/math");
 require("tools/draw");
 require("tools/vector");
 require("tools/particles");
 require("tools/lights/lights");
 require("tools/timer");
+
+-- UI
+require("tools/UI/label");
+
+-- Other
 require("entities/player");
 
 -- Some variables to shorten code

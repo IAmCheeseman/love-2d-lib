@@ -1,14 +1,14 @@
 
 local function init(self)
     for i=1,self.amount do
-        local dir = self.dir:normalized():rotatedDegrees( (lm.random()*(self.spread*2))-self.spread );
+        local dir = self.dir:normalized():rotatedDegrees(lm.random(-self.spread, self.spread));--(lm.random()*(self.spread*2))-self.spread );
         t.insert(self._particles, {
             pos=newVec2(
                 lm.random() * self.spawnSize,
                 lm.random() * self.spawnSize
             ):normalized(),
             dir=dir,
-            speed=self.speed,
+            speed=self.speed * (1 - (lm.random() * self.speedRandom)),
             gravity=newVec2(),
             gravityLvl=0
         });
@@ -63,6 +63,7 @@ function newParticles()
         gravity=620,
         spread=45,
         speed=150,
+        speedRandom=0,
         damping=0,
         scaleLerp=1,
         drawShape="circle", -- "rect" for a rectangle
