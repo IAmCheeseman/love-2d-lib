@@ -37,22 +37,16 @@ end
 local function rotated(self, r) 
     local rot = self:angle()+r
     local length = self:length()
-    return newVec2(m.cos(rot), m.sin(rot)):mult(length)
+    return newVec2(m.cos(rot), m.sin(rot)) * length
 end
 local function rotatedDegrees(self, d) 
     return self:rotated(m.deg2rad(d))
 end
-local function add(self, vector) return newVec2(self.x+vector.x, self.y+vector.y) end
-local function sub(self, vector) return newVec2(self.x-vector.x, self.y-vector.y) end
-local function mult(self, n) return newVec2(self.x*n, self.y*n) end
-local function vmutl(self, vector) return newVec2(self.x*vector.x, self.y*vector.y) end
-local function div(self, n) return newVec2(self.x/n, self.y/n) end
-local function vdiv(self, vector) return newVec2(self.x/vector.x, self.y/vector.y) end
 
 function newVec2(x, y)
     x = x or 0
     y = y or 0
-    local newVec = {
+    local newVec = setmetatable({
         x=x, y=y,
         length=length,
         normalized=normalized,
@@ -64,13 +58,29 @@ function newVec2(x, y)
         moveTo=moveTo,
         rotated=rotated,
         rotatedDegrees=rotatedDegrees,
-        add=add,
-        sub=sub,
-        mult=mult,
-        vmult=vmult,
-        div=div,
-        vdiv=vdiv
-    }
+    },
+    {
+        __add = function(vec1, vec2)
+            return newVec2(vec1.x + vec2.x, vec1.y + vec2.y)
+        end,
+        __sub = function(vec1, vec2)
+            return newVec2(vec1.x - vec2.x, vec1.y - vec2.y)
+        end,
+        __mul = function(vec1, vec2)
+            if type(vec2) == "table" then
+                return newVec2(vec1.x * vec2.x, vec1.y * vec2.y)
+            else
+                return newVec2(vec1.x * vec2, vec1.y * vec2)
+            end
+        end,
+        __div = function(vec1, vec2)
+            if type(vec2) == "table" then
+                return newVec2(vec1.x / vec2.x, vec1.y / vec2.y)
+            else
+                return newVec2(vec1.x / vec2, vec1.y / vec2)
+            end
+        end
+    })
 
     return newVec
 end

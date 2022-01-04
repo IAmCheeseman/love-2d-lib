@@ -6,7 +6,7 @@ end
 
 function overlapsPoint(self, point)
 	s = self.startPoint
-	e = self.endPoint.add(s)
+	e = self.endPoint + s
 	return s.x < point.x and s.y < point.y and e.x > point.x and e.y > point.y
 end
 

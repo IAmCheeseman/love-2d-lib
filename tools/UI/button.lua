@@ -1,10 +1,13 @@
 
 local function update(self, dt) 
+    local aabb = newAabb(self.pos, self.size)
+    if not aabb.overlapsPoint(love.mouse.getPosition())
+
     if not love.mouse.isDown(0) then
-        self.hovered = false
+        self.clicked = false
         return
     end
-    self.hovered = true
+    self.clicked = true
     for i, button in ipairs(self.pressedFunctions) do
 
     end

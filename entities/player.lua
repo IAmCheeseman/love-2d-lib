@@ -15,13 +15,13 @@ local function move(self, dt)
 
     -- Normalizing the input vector
     targetV = targetV:normalized()
-    targetV = targetV:mult(self.speed)
+    targetV = targetV * self.speed
 
     -- Applying the lerp
     self.vel = self.vel:moveTo(targetV, lerpVal * dt)
 
     -- Applying the velocity
-    self.pos = self.pos:add(self.vel:mult(dt))
+    self.pos = self.pos + (self.vel * dt)
 end
 
 -- Player update

@@ -13,12 +13,12 @@ require("tools/draw")
 require("tools/vector")
 require("tools/particles")
 require("tools/timer")
-require("tools/aabb")
+-- require("tools/aabb")
 
 -- UI
 require("tools/UI/theme")
 require("tools/UI/label")
-require("tools/UI/button")
+-- require("tools/UI/button")
 
 -- Other
 require("entities/player")

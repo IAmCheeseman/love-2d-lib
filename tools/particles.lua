@@ -24,12 +24,10 @@ local function update(self, dt)
     for i, particle in ipairs(self._particles) do 
         local particle = self._particles[i]
         -- Adding velocity
-        particle.pos.x = (particle.pos.x + particle.dir.x * particle.speed * dt) + (particle.gravity.x * dt)
-        particle.pos.y = (particle.pos.y + particle.dir.y * particle.speed * dt) + (particle.gravity.y * dt)
+        particle.pos = (particle.pos + particle.dir * particle.speed * dt) + (particle.gravity * dt)
         -- Gravity
-        particle.gravity.x = self.gravityDir.x * (self.gravity * particle.gravityLvl * dt)
-        particle.gravity.y = self.gravityDir.y * (self.gravity * particle.gravityLvl * dt)
-
+        particle.gravity = self.gravityDir * (self.gravity * particle.gravityLvl * dt)
+        
         particle.gravityLvl = particle.gravityLvl + 1
         -- Damping
         particle.speed = m.lerp(particle.speed, 0, self.damping*dt)
@@ -47,8 +45,7 @@ local function draw(self)
         if self.drawShape == "circle" then     -- Circle drawing
             gfx.circle(self.drawMode, drawPos, self.size*self.lifetime:percentageOver()*particle.scaleRandom)
         elseif self.drawShape == "rect" then   -- Rect drawing
-            gfx.rectangle(self.drawMode, drawPos, newVec2(self.size*2, self.size*2).mult(
-                self.lifetime:percentageOver()*particle.scaleRandom))
+            gfx.rectangle(self.drawMode, drawPos, newVec2(self.size*2, self.size*2)*(self.lifetime:percentageOver()*particle.scaleRandom))
         end
     end
     gfx.setColor(colors.WHITE)
@@ -83,4 +80,5 @@ function newParticles()
 
     return particles
 end
+
 
