@@ -2,6 +2,19 @@
 -- player.lua is a script containing basic movement code,
 -- with acceleration/friction applied
 
+
+local function init(self)
+    local newButton = newButton("Click to die", newVec2(50, 50), newVec2(130, 30))
+    t.insert(newButton.pressedFunctions,
+        {
+            func=self.die,
+            args={self}
+        }
+    )
+    addObject(newButton)
+end
+
+
 local function move(self, dt) 
     local targetV = newVec2()
     if kb.isDown("w") then targetV.y = -1 end
@@ -29,6 +42,10 @@ local function update(self, dt)
     self:move(dt)
 end
 
+local function die(args)
+    removeObject(args[1])
+end
+
 -- Player draw
 local function draw(self)
     gfx.setColor(gfx.newColor(1, 1, 0))
@@ -41,11 +58,13 @@ function newPlayer() -- Creates a new player object
     return {
         pos = newVec2(50, 50),
         vel = newVec2(),
-        speed=180,
+        speed=360,
         accel=10,
         frict=17,
         move=move,
+        die=die,
+        init=init,
         update=update,
-        draw=draw
+        draw=draw,
     }
 end

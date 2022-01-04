@@ -7,31 +7,19 @@
 -- it has one. (This is the only check currently though more could be
 -- added in the future.)
 
--- Useful tools
-require("tools/math")
-require("tools/draw")
-require("tools/vector")
-require("tools/particles")
-require("tools/timer")
--- require("tools/aabb")
-
--- UI
-require("tools/UI/theme")
-require("tools/UI/label")
--- require("tools/UI/button")
-
--- Other
-require("entities/player")
+require("objectInclude")
 
 -- Some variables to shorten code
 gfx = love.graphics
 kb  = love.keyboard
-lm = love.math
-t = table
-m = math
+lm  = love.math
+t   = table
+m   = math
 
 -- Some objects
 globals = {}
+
+collisionLayers = {}
 
 -- Holds every object in the game 
 objects = {}
@@ -52,13 +40,25 @@ function removeObject(object)
         end
     end
 end
+-- Collision layers
+function addCollisionLayer(amt)
+    amt = amt or 1
+    for i=1,amt do t.insert(collisionLayers, {}) end
+end
+function addCollisionObject(collider, layer)
+    assert(#collisionLayers < layer, "Please add layers before assigning colliders to them")
+    t.insert(collisionLayers[layer], collider)
+    collider.collisionLayer = collisionLayers[layer]
+end
 
 -- Game states
-function defaultState()
+function resetGame()
     objects = {}
+    collisionLayers = {}
+    addCollisionLayer(5)
     globals.player = newPlayer()
     addObject(globals.player)
 end
 
-defaultState()
+resetGame()
 
