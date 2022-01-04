@@ -1,10 +1,10 @@
 
 local function update(self, dt) 
     if not love.mouse.isDown(0) then
-        self.clicked = false
+        self.hovered = false
         return
     end
-    self.clicked = true
+    self.hovered = true
     for i, button in ipairs(self.pressedFunctions) do
 
     end
