@@ -14,11 +14,12 @@ colors = {
     TEAL={r=0, g=1, b=1},
     PURPLE={r=1, g=0, b=1}
 }
-colors.GREY       = colors.GRAY
-colors.LIGHT_GREY = colors.LIGHT_GRAY
-colors.DARK_GREY  = colors.DARK_GRAY
+-- Gray -> Grey
+colors.GREY         = colors.GRAY
+colors.LIGHT_GREY   = colors.LIGHT_GRAY
+colors.DARK_GREY    = colors.DARK_GRAY
 
--- You can remove the `local` if you don't want to use colors or vectors
+-- Old functions
 local oldSetColor   = love.graphics.setColor
 local oldSetBGColor = love.graphics.setBackgroundColor
 local oldCircle     = love.graphics.circle
@@ -26,7 +27,7 @@ local oldRect       = love.graphics.rectangle
 local oldPrint      = love.graphics.print
 
 
-function love.graphics.newColor(r, g, b)                                      return {r=r, g=g, b=b} end
+function love.graphics.newColor(r, g, b) return {r=r, g=g, b=b}                                      end
 -- Functions to use colors instead of straight rgb values
 function love.graphics.setColor(color)           oldSetColor(color.r, color.g, color.b)              end
 function love.graphics.setBackgroundColor(color) oldSetBGColor(color.r, color.g, color.b)            end
@@ -36,6 +37,6 @@ function love.graphics.rectangle(mode, pos, size) oldRect(mode, pos.x, pos.y, si
 function love.graphics.print(text, pos, rot, size) oldPrint(text, pos.x, pos.y, rot, size.x, size.y) end
 
 -- Bri'ish translations :puking:
-love.graphics.newColour = love.graphics.newColor
-love.graphics.setColour = love.graphics.setColor
+love.graphics.newColour           = love.graphics.newColor
+love.graphics.setColour           = love.graphics.setColor
 love.graphics.setBackgroundColour = love.graphics.setBackgroundColor

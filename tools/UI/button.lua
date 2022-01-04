@@ -1,5 +1,10 @@
 
 local function update(self, dt) 
+    if not love.mouse.isDown(0) then
+        self.clicked = false
+        return
+    end
+    self.clicked = true
     for i, button in ipairs(self.pressedFunctions) do
 
     end
@@ -18,6 +23,7 @@ function newButton(text, pos, size)
         pos=pos,
         size=size,
         hovered=false,
+        clicked=false,
         theme=newTheme(),
         pressedFunctions={},
         update=update,

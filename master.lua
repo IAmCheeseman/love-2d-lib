@@ -13,6 +13,7 @@ require("tools/draw")
 require("tools/vector")
 require("tools/particles")
 require("tools/timer")
+require("tools/aabb")
 
 -- UI
 require("tools/UI/theme")

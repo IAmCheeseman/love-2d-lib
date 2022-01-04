@@ -14,6 +14,7 @@ require("master")
 -- local newLabel = newLabel("Hello, World", newVec2(50, 50), newVec2(5, 5))
 -- addObject(newLabel)
 
+
 local theme = newTheme()
 theme.borderSize = 5
 local newButton = newButton("Test", newVec2(50, 50), newVec2(60, 30))
