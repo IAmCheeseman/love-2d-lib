@@ -15,7 +15,9 @@ require("tools/particles")
 require("tools/timer")
 
 -- UI
+require("tools/UI/theme")
 require("tools/UI/label")
+require("tools/UI/button")
 
 -- Other
 require("entities/player")
