@@ -43,7 +43,7 @@ All extra math functions are added to luas default `math` library.
 
 
 ## Vectors
-I have a vector class/table with some helpful functions. Call `require("tools/vector")` to get them and then `newVec2(<x>, <y>)` to get one.
+I have a vector class/table with some helpful functions. Call `require("tools/vector")` to get them and then `newVec2(<x>, <y>)` to get one. You can do math on them like you would anything else.
 
 **Vector Properties**
 
@@ -75,15 +75,6 @@ I have a vector class/table with some helpful functions. Call `require("tools/ve
 
 `vec:moveTo(<vector>, <t>)` - returns `vec` lerped to `vector`
 
-`vec:add(<vector>)` - returns a new vector with `vector` added to it
-
-`vec:mult(<n>)` - returns a new vector multiplied by `n`
-
-`vec:vmult(<vector>)` - returns a new vector mutliplied by another vector
-
-`vec:div(<n>)` - returns a new vector divided by `n`
-
-`vec:vdiv(<vector>)` - returns a new vector divided by another vector
 
 **Related Functions**
 
