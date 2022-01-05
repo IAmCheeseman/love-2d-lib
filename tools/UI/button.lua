@@ -24,17 +24,18 @@ local function draw(self)
     local padding = newVec2(self.theme.padding, self.theme.padding)
     local pos = self.pos - (padding / 2)
     local size = self.size + padding
+    local camPos = camera.pos or newVec2()
 
     if self.hovered and not self.clicked then
         gfx.setColor(self.theme.colorHover)
-        gfx.rectangle("fill", pos, size)
+        gfx.rectangle("fill", pos - camPos, size)
         gfx.setColor(self.theme.textColorHover)
-        gfx.print(self.text, self.pos, 0, newVec2(self.theme.textSize, self.theme.textSize))
+        gfx.print(self.text, self.pos - camPos, 0, newVec2(self.theme.textSize, self.theme.textSize))
     else
         gfx.setColor(self.theme.color)
-        gfx.rectangle("fill", pos, size)
+        gfx.rectangle("fill", pos - camPos, size)
         gfx.setColor(self.theme.textColor)
-        gfx.print(self.text, self.pos, 0, newVec2(self.theme.textSize, self.theme.textSize))
+        gfx.print(self.text, self.pos - camPos, 0, newVec2(self.theme.textSize, self.theme.textSize))
     end
     gfx.setColor(colors.WHITE)
 end

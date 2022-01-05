@@ -13,6 +13,8 @@ require("tools/particles")
 require("tools/timer")
 -- AABB collision.
 require("tools/aabb")
+-- Camera, for cameraing
+require("tools/camera")
 
 
 -- UI

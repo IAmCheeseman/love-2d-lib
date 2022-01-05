@@ -53,24 +53,24 @@ end
 
 function newParticles()
     local particles = {
-        _particles={},                   -- The individual particles
-        amount=8,                        -- Amount of particles
-        pos=newVec2(),                   -- Particle object position
-        spawnRange=16,                   -- Particle spawn range
-        dir=newVec2(1, 0),               -- Particle force direction
-        explosion=1,                     -- How quickly the particles spawn in, TODO
-        gravityDir=newVec2(0, 1),        -- Direction of gravity
-        gravity=620,                     -- Gravity multiplier
-        spread=45,                       -- Particle direction spread
-        speed=150,                       -- Particle speed
-        speedRandom=0,                   -- Particle speed mod
-        damping=0,                       -- Friction
-        scaleLerp=1,                     -- Delta for scale lerping
-        drawShape="circle",              -- Draw shape
-        drawMode="fill",                 -- Draw mode
-        size=12,                         -- Size of the particles
-        scaleRandom=0,                   -- Size mod
-        color=gfx.newColor(1, 1, 1),     -- Particle color
+        _particles={},--------------------- The individual particles
+        amount=8,-------------------------- Amount of particles
+        pos=newVec2(),--------------------- Particle object position
+        spawnRange=16,--------------------- Particle spawn range
+        dir=newVec2(1, 0),----------------- Particle force direction
+        explosion=1,----------------------- How quickly the particles spawn in, TODO
+        gravityDir=newVec2(0, 1),---------- Direction of gravity
+        gravity=620,----------------------- Gravity multiplier
+        spread=45,------------------------- Particle direction spread
+        speed=150,------------------------- Particle speed
+        speedRandom=0,--------------------- Particle speed mod
+        damping=0,------------------------- Friction
+        scaleLerp=1,----------------------- Delta for scale lerping
+        drawShape="circle",---------------- Draw shape
+        drawMode="fill",------------------- Draw mode
+        size=12,--------------------------- Size of the particles
+        scaleRandom=0,--------------------- Size mod
+        color=gfx.newColor(1, 1, 1),------- Particle color
         -- Functions
         init=init,
         update=update,

@@ -4,14 +4,8 @@
 
 
 local function init(self)
-    local newButton = newButton("Click to die", newVec2(50, 50), newVec2(130, 30))
-    t.insert(newButton.pressedFunctions,
-        {
-            func=self.die,
-            args={self}
-        }
-    )
-    addObject(newButton)
+    camera = newCamera(self)
+    camera.smoothing = 10
 end
 
 
@@ -56,9 +50,9 @@ end
 
 function newPlayer() -- Creates a new player object
     return {
-        pos = newVec2(50, 50),
-        vel = newVec2(),
-        speed=360,
+        pos=newVec2(50, 50),
+        vel=newVec2(),
+        speed=420,
         accel=10,
         frict=17,
         move=move,

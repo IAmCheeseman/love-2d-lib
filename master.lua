@@ -9,6 +9,9 @@
 
 require("objectInclude")
 
+--
+WINDOW_SIZE = newVec2(320, 180) * 3
+
 -- Some variables to shorten code
 gfx = love.graphics
 kb  = love.keyboard
@@ -16,6 +19,7 @@ lm  = love.math
 t   = table
 m   = math
 
+camera = nil
 -- Some objects
 globals = {}
 

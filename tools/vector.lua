@@ -42,6 +42,9 @@ end
 local function rotatedDegrees(self, d) 
     return self:rotated(m.deg2rad(d))
 end
+local function copy(self)
+    return newVec2(self.x, self.y)
+end
 
 function newVec2(x, y)
     x = x or 0
@@ -58,6 +61,7 @@ function newVec2(x, y)
         moveTo=moveTo,
         rotated=rotated,
         rotatedDegrees=rotatedDegrees,
+        copy=copy,
     },
     {
         __add = function(vec1, vec2)
@@ -79,6 +83,9 @@ function newVec2(x, y)
             else
                 return newVec2(vec1.x / vec2, vec1.y / vec2)
             end
+        end,
+        __unm = function(vec1)
+            return vec1:copy() * -1
         end
     })
 
