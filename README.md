@@ -1,4 +1,4 @@
-# Love2DBase
+# My Personal Love2D lib.
 A base for love2D projects, so I don't need to set up the same systems every time I want to make a game. You can use this in your own projects, no credit needed. But this is purely a personal thing, so I won't be adding features unless I find a use for them, unless you add them yourself (Make a PR!). There may also be broken stuff and uncomplete stuff.
 
 ### Goals
