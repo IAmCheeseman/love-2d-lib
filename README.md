@@ -84,7 +84,7 @@ I have a vector class/table with some helpful functions. Call `require("tools/ve
 `love.mouse.getPosition()` - Returns the vector of the mouse position
 
 ## Timers
-There's a timer table which you can get with `require("tools/timer")` and then calling `newTimer(<time>)`.
+There's a timer table which you can get with `require("tools/timer")` and then calling `timer.new(<time>)`.
 
 **Timer Properties**
 
