@@ -34,7 +34,7 @@ local function update(self, dt)
     self:move(dt)
 
     -- Little red things
-    if kb.isDown() and self.dropTimer:isOver() then
+    if kb.isDown("space") and self.dropTimer:isOver() then
         -- You can create tiny throwaway objects in the same file :)
         local newDrop = {
             pos=self.pos:copy(),

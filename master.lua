@@ -44,9 +44,13 @@ function removeObject(object)
 end
 
 -- Game states
-function resetGame()
-    objects = {}
-end
+gameStates = {
+    resetGame=function()
+        objects = {}
+        paused = false
+        main.init()
+    end
+}
 
-resetGame()
+gameStates.resetGame()
 
