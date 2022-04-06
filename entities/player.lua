@@ -3,14 +3,8 @@
 -- with acceleration/friction applied
 
 
-local function init(self)
-    camera = newCamera(self)
-    camera.smoothing = 10
-end
-
-
 local function move(self, dt) 
-    local targetV = newVec2()
+    local targetV = vec.new()
     if kb.isDown("w") then targetV.y = -1 end
     if kb.isDown("a") then targetV.x = -1 end
     if kb.isDown("s") then targetV.y =  1 end
@@ -18,7 +12,7 @@ local function move(self, dt)
 
     -- Acceleration and friction
     local lerpVal = self.accel
-    if targetV == newVec2() then lerpVal = self.frict end
+    if targetV == vec.new() then lerpVal = self.frict end
 
     -- Normalizing the input vector
     targetV = targetV:normalized()
@@ -50,14 +44,13 @@ end
 
 function newPlayer() -- Creates a new player object
     return {
-        pos=newVec2(50, 50),
-        vel=newVec2(),
+        pos=vec.new(50, 50),
+        vel=vec.new(),
         speed=420,
         accel=10,
         frict=17,
         move=move,
         die=die,
-        init=init,
         update=update,
         draw=draw,
     }

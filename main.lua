@@ -1,9 +1,9 @@
 require("master")
  
 
+-- An example of how to create objects
 local drawObject = {
-    update=function(self, dt) end,
-    draw=function(self) gfx.circle("fill", newVec2(150,150), 128) end
+    draw=function(self) gfx.circle("fill", vec.new(150,150), 128) end
 }
 addObject(drawObject)
 
@@ -11,7 +11,7 @@ addObject(drawObject)
 -- Loops through everything and makes it do things
 function love.update(dt)
     for i, object in ipairs(objects) do
-        object:update(dt)
+        if object.update then object:update(dt) end
     end
     if camera ~= nil then camera:update(dt) end
 end
@@ -19,7 +19,7 @@ end
 function love.draw()
     if camera ~= nil then camera:draw() end
     for i, object in ipairs(objects) do
-        object:draw()
+        if object.draw then object:draw() end
     end
 end
 

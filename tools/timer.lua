@@ -8,7 +8,7 @@ local function percentageOver(self) return 1 - (self:timeElapsed() / self.time) 
 local function update(self, dt)     self.timeLeft = self.timeLeft - dt end
 local function draw(self)           if self.printTime then gfx.print(self.timeLeft) end end
 
-function newTimer(time) 
+local function new(time) 
     return {
         time=time,
         timeLeft=time,
@@ -22,3 +22,7 @@ function newTimer(time)
         draw=draw
     }
 end
+
+return {
+    new=new
+}

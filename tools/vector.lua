@@ -8,16 +8,16 @@ end
 local function normalized(self)
     local length = self:length()
     if length ~= 0 then
-        return newVec2(self.x/length, self.y/length)
+        return new(self.x/length, self.y/length)
     else
-        return newVec2(0, 0)
+        return new(0, 0)
     end
 end
 local function directionTo(self, vector)
-    return newVec2(self.x-vector.x, self.y-vector.y):normalized()
+    return new(self.x-vector.x, self.y-vector.y):normalized()
 end
 local function distanceTo(self, vector)
-    return newVec2(self.x-vector.x, self.y-vector.y):length()
+    return new(self.x-vector.x, self.y-vector.y):length()
 end
 local function angleTo(self, vector)
     local dot = self:dot(vector)
@@ -29,7 +29,7 @@ local function angle(self)
     return m.atan2(self.y, self.x)
 end
 local function moveTo(self, vector, t)
-    return newVec2(
+    return new(
         m.lerp(self.x, vector.x, t),
         m.lerp(self.y, vector.y, t)
     )
@@ -37,16 +37,16 @@ end
 local function rotated(self, r) 
     local rot = self:angle()+r
     local length = self:length()
-    return newVec2(m.cos(rot), m.sin(rot)) * length
+    return new(m.cos(rot), m.sin(rot)) * length
 end
 local function rotatedDegrees(self, d) 
     return self:rotated(m.deg2rad(d))
 end
 local function copy(self)
-    return newVec2(self.x, self.y)
+    return new(self.x, self.y)
 end
 
-function newVec2(x, y)
+function new(x, y)
     x = x or 0
     y = y or 0
     local newVec = setmetatable({
@@ -65,23 +65,23 @@ function newVec2(x, y)
     },
     {
         __add = function(vec1, vec2)
-            return newVec2(vec1.x + vec2.x, vec1.y + vec2.y)
+            return new(vec1.x + vec2.x, vec1.y + vec2.y)
         end,
         __sub = function(vec1, vec2)
-            return newVec2(vec1.x - vec2.x, vec1.y - vec2.y)
+            return new(vec1.x - vec2.x, vec1.y - vec2.y)
         end,
         __mul = function(vec1, vec2)
             if type(vec2) == "table" then
-                return newVec2(vec1.x * vec2.x, vec1.y * vec2.y)
+                return new(vec1.x * vec2.x, vec1.y * vec2.y)
             else
-                return newVec2(vec1.x * vec2, vec1.y * vec2)
+                return new(vec1.x * vec2, vec1.y * vec2)
             end
         end,
         __div = function(vec1, vec2)
             if type(vec2) == "table" then
-                return newVec2(vec1.x / vec2.x, vec1.y / vec2.y)
+                return new(vec1.x / vec2.x, vec1.y / vec2.y)
             else
-                return newVec2(vec1.x / vec2, vec1.y / vec2)
+                return new(vec1.x / vec2, vec1.y / vec2)
             end
         end,
         __unm = function(vec1)
@@ -91,3 +91,7 @@ function newVec2(x, y)
 
     return newVec
 end
+
+return {
+    new=new
+}

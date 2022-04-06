@@ -2,13 +2,12 @@
 A base for love2D projects, so I don't need to set up the same systems every time I want to make a game. You can use this in your own projects, no credit needed. But this is purely a personal thing, so I won't be adding features unless I find a use for them, unless you add them yourself (Make a PR!). There may also be broken stuff and uncomplete stuff.
 
 ### Goals
+
 √ Vector base
 
 √ Timers
 
 √ Color table
-
-√ Particles
 
 □ Animations
 
@@ -33,7 +32,7 @@ I have shortened names for commonly used things
 
 ## Math
 
-All extra math functions are added to luas default `math` library.
+All extra math functions are added to lua's default `math` library.
 
 `lerp(<from>, <to>, <weight>)` - lerps from `from` to `to`, `weight` controls how far along to move it
 
@@ -43,7 +42,7 @@ All extra math functions are added to luas default `math` library.
 
 
 ## Vectors
-I have a vector class/table with some helpful functions. Call `require("tools/vector")` to get them and then `newVec2(<x>, <y>)` to get one. You can do math on them like you would anything else.
+I have a vector class/table with some helpful functions. Call `require("tools/vector")` to get them and then `vec.new(<x>, <y>)` to get one. You can do math on them like you would anything else. They can be used in expressions how you'd expect.
 
 **Vector Properties**
 
@@ -78,9 +77,11 @@ I have a vector class/table with some helpful functions. Call `require("tools/ve
 
 **Related Functions**
 
-`gfx.vcircle(<mode>, <pos>, <radius>)` - Draws a circle with a vector
+`gfx.circle(<mode>, <pos>, <radius>)` - Draws a circle with a vector
 
-`gfx.vrect()`
+`gfx.rectangle(<mode>, <pos>, <size>)` - Draws a rectangle
+
+`love.mouse.getPosition()` - Returns the vector of the mouse position
 
 ## Timers
 There's a timer table which you can get with `require("tools/timer")` and then calling `newTimer(<time>)`.
@@ -112,7 +113,4 @@ use colour instead of color.
 
 **Color Functions**
 
-`gfx.csetColor(<color>)` - version of `setColor()` which uses my color system
-
-## Particles
-WIP - Gonna be very long
+All color related functions have been wrapped in my color class.

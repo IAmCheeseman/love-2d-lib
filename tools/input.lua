@@ -1,5 +1,3 @@
-
-
 local oldMGetPos = love.mouse.getPosition
 
 function love.mouse.getPosition()

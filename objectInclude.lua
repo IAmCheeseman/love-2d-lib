@@ -6,33 +6,15 @@ require("tools/math")
 -- Also allows draw functions to use vectors.
 require("tools/draw")
 -- Adds vectors, and vector math functions.
-require("tools/vector")
--- Particle effects.
-require("tools/particles")
+vec=require("tools/vector")
 -- Timer which counts down in real time.
-require("tools/timer")
--- AABB collision.
-require("tools/aabb")
--- Camera, for cameraing
-require("tools/camera")
-
-
--- UI
-
--- UI themes tell how UI will be styled. Very basic atm.
-require("tools/UI/theme")
--- For displaying text,
--- this is just gfx.print(), but works better with this framework.
-require("tools/UI/label")
--- Buttons, you click them. They do stuff.
-require("tools/UI/button")
+timer=require("tools/timer")
 
 
 -- Input
 
 -- Makes some input functions work better with the framework.
 require("tools/input")
-
 
 -- Custom objects
 

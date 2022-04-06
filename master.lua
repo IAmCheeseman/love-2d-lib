@@ -10,7 +10,7 @@
 require("objectInclude")
 
 --
-WINDOW_SIZE = newVec2(320, 180) * 3
+WINDOW_SIZE = vec.new(320, 180) * 3
 
 -- Some variables to shorten code
 gfx = love.graphics
