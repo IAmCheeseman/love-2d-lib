@@ -3,6 +3,7 @@
 
 
 local function init(self)
+    self.dropTimer.timeLeft = 0.0
     addObject(self.dropTimer)
 end
 
@@ -34,18 +35,17 @@ local function update(self, dt)
 
     if kb.isDown("l") and self.dropTimer:isOver() then
         -- You can create tiny throwaway objects in the same file :)
+    
         local newDrop = {
             pos=self.pos:copy(),
             draw=function(self) 
-                gfx.setColor()
+                gfx.setColor(colors.RED)
                 gfx.circle("fill", self.pos, 8)
             end
         }
-
-        print("oI!")
         addObject(newDrop)
 
-        self.dropTimer.reset()
+        self.dropTimer:reset()
     end
 end
 
