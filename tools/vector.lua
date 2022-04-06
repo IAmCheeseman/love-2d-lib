@@ -1,4 +1,6 @@
 
+-- All these are fairly self explainitory, so not many comments.
+
 local function dot(self, vector)
     return (self.x*self.x + self.y*self.y) + (vector.x*vector.x + vector.y*vector.y)
 end
@@ -63,7 +65,7 @@ function new(x, y)
         rotatedDegrees=rotatedDegrees,
         copy=copy,
     },
-    {
+    { -- Expression stuff
         __add = function(vec1, vec2)
             return new(vec1.x + vec2.x, vec1.y + vec2.y)
         end,

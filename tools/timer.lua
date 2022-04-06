@@ -1,4 +1,6 @@
 
+-- All these are fairly self explainitory, so not many comments.
+
 local function isOver(self)         return self.timeLeft <= 0 end
 local function reset(self)          self.timeLeft = self.time end
 local function resetIfOver(self)    if self:isOver() then self:reset() end end

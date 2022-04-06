@@ -7,7 +7,7 @@
 -- it has one. (This is the only check currently though more could be
 -- added in the future.)
 
-require("objectInclude")
+require("include")
 
 --
 WINDOW_SIZE = vec.new(320, 180) * 3
@@ -19,11 +19,8 @@ lm  = love.math
 t   = table
 m   = math
 
-camera = nil
--- Some objects
+-- Some global objects for easy access
 globals = {}
-
-collisionLayers = {}
 
 -- Holds every object in the game 
 objects = {}
@@ -44,24 +41,10 @@ function removeObject(object)
         end
     end
 end
--- Collision layers
-function addCollisionLayer(amt)
-    amt = amt or 1
-    for i=1,amt do t.insert(collisionLayers, {}) end
-end
-function addCollisionObject(collider, layer)
-    assert(#collisionLayers < layer, "Please add layers before assigning colliders to them")
-    t.insert(collisionLayers[layer], collider)
-    collider.collisionLayer = collisionLayers[layer]
-end
 
 -- Game states
 function resetGame()
     objects = {}
-    collisionLayers = {}
-    addCollisionLayer(5)
-    globals.player = newPlayer()
-    addObject(globals.player)
 end
 
 resetGame()

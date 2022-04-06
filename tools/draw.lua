@@ -17,13 +17,12 @@ function love.graphics.rectangle(mode, pos, size) oldRect(mode, pos.x, pos.y, si
 function love.graphics.translate(pos)oldTranslate(pos.x, pos.y)                                      end
 function love.graphics.print(text, pos, rot, size)
     rot = rot or 0
-    size = size or newVec2(1, 1)
-    pos = pos or newVec2(1, 1)
+    size = size or vec.new(1, 1)
+    pos = pos or vec.new(1, 1)
     oldPrint(text, pos.x, pos.y, rot, size.x, size.y)
 end
 
 -- Bri'ish translations :puking:
-love.graphics.newColour           = love.graphics.newColor
 love.graphics.setColour           = love.graphics.setColor
 love.graphics.setBackgroundColour = love.graphics.setBackgroundColor
 

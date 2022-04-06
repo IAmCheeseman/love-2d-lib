@@ -1,4 +1,3 @@
-
 -- player.lua is a script containing basic movement code,
 -- with acceleration/friction applied
 
@@ -42,6 +41,8 @@ local function update(self, dt)
                 gfx.circle("fill", self.pos, 8)
             end
         }
+
+        print("oI!")
         addObject(newDrop)
 
         self.dropTimer.reset()
@@ -54,13 +55,13 @@ end
 
 -- Player draw
 local function draw(self)
-    gfx.setColor(color.new(1, 1, 0))
+    gfx.setColor(colors.YELLOW)
     gfx.circle("fill", self.pos, 32) 
     gfx.setColor(colors.WHITE)
 end
 
 
-function newPlayer() -- Creates a new player object
+local function new() -- Creates a new player object
     return {
         pos=vec.new(50, 50),
         vel=vec.new(),
@@ -75,3 +76,7 @@ function newPlayer() -- Creates a new player object
         draw=draw,
     }
 end
+
+return {
+    new=new
+}
