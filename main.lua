@@ -5,6 +5,7 @@ addObject(main)
 
 -- Loops through everything and makes it do things
 function love.update(dt)
+    if paused then return end
     for i, object in ipairs(objects) do
         if object.update then object:update(dt) end
     end

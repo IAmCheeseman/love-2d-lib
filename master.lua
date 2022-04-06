@@ -9,7 +9,6 @@
 
 require("include")
 
---
 WINDOW_SIZE = vec.new(320, 180) * 3
 
 -- Some variables to shorten code
@@ -24,6 +23,8 @@ globals = {}
 
 -- Holds every object in the game 
 objects = {}
+
+paused = false
 
 
 -- Object functions

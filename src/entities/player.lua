@@ -33,9 +33,9 @@ end
 local function update(self, dt)
     self:move(dt)
 
-    if kb.isDown("l") and self.dropTimer:isOver() then
+    -- Little red things
+    if kb.isDown() and self.dropTimer:isOver() then
         -- You can create tiny throwaway objects in the same file :)
-    
         local newDrop = {
             pos=self.pos:copy(),
             draw=function(self) 
@@ -68,7 +68,7 @@ local function new() -- Creates a new player object
         speed=420,
         accel=10,
         frict=17,
-        dropTimer=timer.new(5),
+        dropTimer=timer.new(1),
         move=move,
         die=die,
         init=init,
