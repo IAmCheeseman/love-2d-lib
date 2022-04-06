@@ -3,6 +3,10 @@
 -- with acceleration/friction applied
 
 
+local function init(self)
+    addObject(self.dropTimer)
+end
+
 local function move(self, dt) 
     local targetV = vec.new()
     if kb.isDown("w") then targetV.y = -1 end
@@ -28,6 +32,20 @@ end
 -- Player update
 local function update(self, dt)
     self:move(dt)
+
+    if kb.isDown("l") and self.dropTimer:isOver() then
+        -- You can create tiny throwaway objects in the same file :)
+        local newDrop = {
+            pos=self.pos:copy(),
+            draw=function(self) 
+                gfx.setColor()
+                gfx.circle("fill", self.pos, 8)
+            end
+        }
+        addObject(newDrop)
+
+        self.dropTimer.reset()
+    end
 end
 
 local function die(args)
@@ -36,7 +54,7 @@ end
 
 -- Player draw
 local function draw(self)
-    gfx.setColor(gfx.newColor(1, 1, 0))
+    gfx.setColor(color.new(1, 1, 0))
     gfx.circle("fill", self.pos, 32) 
     gfx.setColor(colors.WHITE)
 end
@@ -49,8 +67,10 @@ function newPlayer() -- Creates a new player object
         speed=420,
         accel=10,
         frict=17,
+        dropTimer=timer.new(5),
         move=move,
         die=die,
+        init=init,
         update=update,
         draw=draw,
     }

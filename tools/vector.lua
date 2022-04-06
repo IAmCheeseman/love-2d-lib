@@ -23,7 +23,7 @@ local function angleTo(self, vector)
     local dot = self:dot(vector)
     local v1Len = self:length()
     local v2Len = vector:length()
-    return (dot/v1Len)/v2Len
+    return (dot / v1Len) / v2Len
 end
 local function angle(self)
     return m.atan2(self.y, self.x)

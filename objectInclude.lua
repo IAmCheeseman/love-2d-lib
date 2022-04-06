@@ -4,6 +4,8 @@
 require("tools/math") 
 -- Draw stuff, adds colors and remakes functions to use them
 -- Also allows draw functions to use vectors.
+color=require("tools/color")
+colors=require("tools/colors")
 require("tools/draw")
 -- Adds vectors, and vector math functions.
 vec=require("tools/vector")

@@ -42,7 +42,7 @@ All extra math functions are added to lua's default `math` library.
 
 
 ## Vectors
-I have a vector class/table with some helpful functions. Call `require("tools/vector")` to get them and then `vec.new(<x>, <y>)` to get one. You can do math on them like you would anything else. They can be used in expressions how you'd expect.
+I have a vector class/table with some helpful functions. Call `require("tools/vector")` to get them and then `vec.new(<x>, <y>)` to get one. You can do math on them like you would anything else. They can be used in expressions how you'd expect. In theory could be added to the objects table, but we don't talk about that.
 
 **Vector Properties**
 

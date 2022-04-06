@@ -1,7 +1,7 @@
 require("master")
  
 
--- An example of how to create objects
+-- An example of how to create objects. `init`, `update`, and `draw` functions are optional.
 local drawObject = {
     draw=function(self) gfx.circle("fill", vec.new(150,150), 128) end
 }
