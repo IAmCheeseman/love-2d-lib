@@ -40,13 +40,11 @@ All extra math functions are added to lua's default `math` library.
 
 
 ## Vectors
-I have a vector class/table with some helpful functions. Call `require("tools/vector")` to get them and then `vec.new(<x>, <y>)` to get one. You can do math on them like you would anything else. They can be used in expressions how you'd expect. In theory could be added to the objects table, but we don't talk about that.
+I have a vector class/table with some helpful functions. Call `require("tools/vector")` to get them and then `vec.new(<x>=0, <y>=0)` to get one. You can do math on them like you would anything else. They can be used in expressions how you'd expect. In theory could be added to the objects table, but we don't talk about that.
 
 **Vector Properties**
 
-`x` - horizontal axis
-
-`y` - vertical axis
+`x`, `y`
 
 **Vector Functions**
 
@@ -54,9 +52,7 @@ I have a vector class/table with some helpful functions. Call `require("tools/ve
 
 `vec:length()` - returns the length
 
-`vec:normalized()` - returns a normalized version
-
-`vec:normalised()` - same as `vec:normalized`, just bri'ish
+`vec:normalized()` - returns a normalized version, can use `vec:normalised()` as well
 
 `vec:directionTo(<vector>)` - returns the direction (normalized) to another vector
 
@@ -66,9 +62,9 @@ I have a vector class/table with some helpful functions. Call `require("tools/ve
 
 `vec:angle()` - returns the angle of the vector
 
-`vec:rotated(<r>)` - returns the vector rotatated by `r` radians
+`vec:rotated(<r>)` - returns the vector rotated by `r` radians
 
-`vec:rotatedDegrees(<d>)` - returns the vector rotatated by `d` degrees
+`vec:rotatedDegrees(<d>)` - returns the vector rotated by `d` degrees
 
 `vec:moveTo(<vector>, <t>)` - returns `vec` lerped to `vector`
 
@@ -82,13 +78,13 @@ I have a vector class/table with some helpful functions. Call `require("tools/ve
 `love.mouse.getPosition()` - Returns the vector of the mouse position
 
 ## Timers
-There's a timer table which you can get with `require("tools/timer")` and then calling `timer.new(<time>)`.
+There's a timer table which you can get with `require("tools/timer")` and then calling `timer.new(<time=1>)`.
 
 **Timer Properties**
 
 `time` - the time it counts down from
 
-`timeLeft` - the time left in the current countdown
+`timeLeft` - the time left in the current countdown, *can* go below zero, so be aware of that
 
 `printTime` - if true, prints out `timeLeft`
 
@@ -105,9 +101,11 @@ There's a timer table which you can get with `require("tools/timer")` and then c
 `timer:getPercentageOver()` - returns how much time is left in the form of a percentage (0-1)
 
 ## Colors
-There's a color table which can be used to store rgb values. Call `gfx.newColor(<r>, <g>, <b>)`
-to create a new color. Below you'll see `gfx` used, which is just `love.graphics`. You may also
+There's a color table which can be used to store rgb values. Call `color.new(<r>, <g>, <b>, <a=1>)`
+to create a new color. You may also
 use colour instead of color.
+
+I have a `colors` table with a bunch of default colors, such as `colors.YELLOW`, or `colors.RED`. 
 
 **Color Functions**
 

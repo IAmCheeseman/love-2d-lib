@@ -11,6 +11,7 @@ local function update(self, dt)     self.timeLeft = self.timeLeft - dt end
 local function draw(self)           if self.printTime then gfx.print(self.timeLeft) end end
 
 local function new(time) 
+    time = time or 1
     return {
         time=time,
         timeLeft=time,
